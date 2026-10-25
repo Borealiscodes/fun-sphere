@@ -1,0 +1,74 @@
+# -------------------------
+# Core Python ignores
+# -------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# Virtual environments
+.env/
+.venv/
+venv/
+ENV/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# -------------------------
+# Project-specific ignores
+# -------------------------
+
+# Local scratch / experiments
+scratch/
+local/
+tmp/
+
+# Example outputs
+examples/*.out
+examples/*.log
+
+# -------------------------
+# LaTeX ignores
+# -------------------------
+docs/*.aux
+docs/*.log
+docs/*.out
+docs/*.toc
+docs/*.synctex.gz
+docs/*.fdb_latexmk
+docs/*.fls
+
+# -------------------------
+# Jupyter / research tooling
+# -------------------------
+.ipynb_checkpoints/
+*.ipynb
+
+# -------------------------
+# OS / editor noise
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# -------------------------
+# Coverage / testing
+# -------------------------
+.coverage
+htmlcov/
+.cache/
+pytest_cache/
