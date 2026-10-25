@@ -1,0 +1,158 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Fun-Sphere: A Holonomy-Induced Submanifold for Reversible Narrative Ecologies}
+\author{Borealis S. Hedling}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This preprint introduces the Fun-Sphere, a holonomy-induced submanifold
+embedded inside a neutral high-dimensional geometric substrate. The
+Fun-Sphere arises when a reversible operator loop returns a point to
+itself while producing a non-identity frame transform. This phenomenon
+corresponds to non-trivial holonomy and defines a sovereign, reversible,
+structurally isolated region of the manifold.
+
+We demonstrate how this geometric construction provides a toy-model
+foundation for reversible narrative ecologies, where story states evolve
+through operator algebra rather than branching logic. The Fun-Sphere
+serves as a mathematically grounded ``pocket universe'' suitable for
+simulation-based storytelling, reversible puzzles, and emergent
+narrative physics.
+\end{abstract}
+
+\section{Introduction}
+
+Traditional narrative engines rely on branching structures or scripting
+languages. These approaches scale poorly and fail to capture reversible
+or emergent story behavior. This work explores a geometric alternative:
+treat narrative as manifold traversal.
+
+Operators correspond to story actions, parallel transport corresponds to
+meaning propagation, holonomy corresponds to narrative curvature, and
+submanifolds correspond to sovereign story worlds. The Fun-Sphere is the
+simplest non-trivial example of such a world.
+
+\section{Ambient Manifold}
+
+Let $M$ be an $n$-dimensional neutral manifold equipped with the identity
+metric:
+\[
+g = I_n.
+\]
+Points in $M$ are represented as vectors $x \in \mathbb{R}^n$. The
+manifold is intentionally structure-free: no curvature, no torsion, and
+no coordinate dependencies.
+
+\section{Reversible Operators}
+
+A reversible operator is defined as a pair $(T, T^{-1})$ where
+$T \in GL(n)$. Operators act on points via:
+\[
+x' = T x.
+\]
+A sequence of operators $\gamma = \{T_1, \dots, T_k\}$ composes into:
+\[
+T_{\gamma} = T_k \cdots T_1.
+\]
+
+\section{Parallel Transport}
+
+Parallel transport is purely algebraic:
+\[
+P_{\gamma}(x) = T_{\gamma} x.
+\]
+This defines a flat connection with no Christoffel symbols or curvature
+tensors.
+
+\section{Holonomy}
+
+Holonomy is defined as the frame transform induced by a closed loop:
+\[
+\Phi_{\gamma} = T_{\gamma}.
+\]
+A loop exhibits non-trivial holonomy when:
+\[
+\Phi_{\gamma} \neq I_n.
+\]
+
+\section{Fun-Sphere Trigger Condition}
+
+A point $x \in M$ triggers Fun-Sphere formation under loop $\gamma$ when:
+\begin{enumerate}
+    \item The loop returns to the same point:
+    \[
+    P_{\gamma}(x) = x.
+    \]
+    \item The frame transforms:
+    \[
+    \Phi_{\gamma} \neq I_n.
+    \]
+\end{enumerate}
+
+\section{Fun-Sphere Definition}
+
+The Fun-Sphere is the holonomy-invariant region:
+\[
+\mathcal{F} =
+\left\{
+x \in M \mid
+P_{\gamma}(x) = x \ \text{and} \ \Phi_{\gamma} \neq I_n
+\right\}.
+\]
+
+\section{Expansion Procedure}
+
+Starting from $x_0$, the Fun-Sphere expands via:
+\[
+x_{k+1} = P_{\gamma}(x_k).
+\]
+Points are added whenever the trigger condition holds.
+
+\section{Narrative Ecology}
+
+Narrative evolution is modeled as reversible operator flow:
+\[
+x_{t+1} = T x_t,
+\qquad
+x_{t-1} = T^{-1} x_t.
+\]
+A reversible narrative loop is:
+\[
+x_{\text{forward}} = T_{\gamma} x_0,
+\qquad
+x_{\text{backward}} = T_{\gamma}^{-1} x_{\text{forward}}.
+\]
+
+\section{Interpretation}
+
+This toy model demonstrates:
+\begin{itemize}
+    \item narrative as manifold traversal,
+    \item story actions as operators,
+    \item plot twists as holonomy,
+    \item reversible story physics via operator inverses,
+    \item pocket universes as holonomy-invariant submanifolds.
+\end{itemize}
+
+\section{Future Work}
+
+Future extensions include:
+\begin{itemize}
+    \item nonlinear operator families,
+    \item curvature-aware manifolds,
+    \item multi-sphere holonomy networks,
+    \item spectral narrative operators,
+    \item geometric AI interpretability via holonomy signatures.
+\end{itemize}
+
+\bibliographystyle{plain}
+\bibliography{preprint_bibliography}
+
+\end{document}
