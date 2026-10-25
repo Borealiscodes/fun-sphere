@@ -1,152 +1,128 @@
 \documentclass[11pt]{article}
 \usepackage{amsmath, amssymb, amsthm}
 
-\title{Fun-Sphere: A Holonomy-Induced Sovereign Submanifold in Fifty Dimensions}
-\author{Borealis S. Hedling}
+\title{Fun-Sphere Submanifold: Mathematical Spine}
+\author{Borealis Hedling}
 \date{}
 
 \begin{document}
 \maketitle
 
-\section{Introduction}
+\section{Ambient Manifold}
 
-We formalize the \emph{Fun-Sphere} as a holonomy-invariant sovereign 
-submanifold embedded within a neutral 50-dimensional manifold. 
-The construction arises naturally from reversible operator sequences 
-whose parallel transport induces non-trivial holonomy.
-
-This document provides the mathematical spine for implementation.
-
-\section{Fifty-Dimensional Neutral Manifold}
-
-Let $M$ be a smooth manifold of dimension $50$ equipped with the 
-neutral metric
+Let $M$ be an $n$-dimensional neutral manifold equipped with the identity
+metric:
 \[
-g = I_{50},
+g = I_n.
 \]
-the $50 \times 50$ identity matrix.  
-Points in $M$ are represented as vectors $x \in \mathbb{R}^{50}$.
+The manifold is intentionally structure-free:
+no curvature, no torsion, and no coordinate dependencies. Points in $M$
+are represented as vectors $x \in \mathbb{R}^n$.
 
-\section{Connection and Parallel Transport}
+\section{Reversible Operators}
 
-We define a connection $\nabla$ implicitly through frame-transform 
-matrices. For any operator-induced transformation $T \in GL(50)$, 
-parallel transport of a vector $v \in T_x M$ is given by
+A reversible operator is defined as a pair of matrices
 \[
-P_T(v) = T v.
+(T, T^{-1}),
+\]
+where $T \in GL(n)$ and $T^{-1}$ is its inverse. The operator acts on
+points or tangent vectors via
+\[
+x' = T x.
 \]
 
-For a sequence of operators $\{T_1, \dots, T_n\}$, the induced 
-parallel transport along a path $\gamma$ is
+A sequence of operators $\{T_1, T_2, \dots, T_k\}$ composes into
 \[
-P_\gamma = T_n T_{n-1} \cdots T_1.
+T_{\gamma} = T_k \cdots T_2 T_1.
 \]
+
+\section{Parallel Transport}
+
+Parallel transport in this toy model is purely algebraic:
+\[
+P_{\gamma}(x) = T_{\gamma} x.
+\]
+No Christoffel symbols or curvature tensors appear; the connection is
+flat by construction.
 
 \section{Holonomy}
 
-Let $\gamma$ be a closed loop based at $x \in M$.  
-The holonomy transformation is
+Holonomy is defined as the frame transform induced by a closed loop
+$\gamma$:
 \[
-\Phi_\gamma = P_\gamma.
+\Phi_{\gamma} = T_{\gamma}.
 \]
 
-Holonomy is \emph{non-trivial} when
+A loop exhibits non-trivial holonomy when
 \[
-\Phi_\gamma \neq I_{50}.
+\Phi_{\gamma} \neq I_n.
 \]
 
-A loop triggers Fun-Sphere formation when:
+\section{Fun-Sphere Trigger Condition}
+
+A point $x \in M$ triggers Fun-Sphere formation under loop $\gamma$ when:
 \begin{enumerate}
     \item The loop returns to the same point:
     \[
-    P_\gamma(x) = x,
+    P_{\gamma}(x) = x.
     \]
-    \item but the frame is transformed:
+    \item The frame transforms:
     \[
-    \Phi_\gamma \neq I_{50}.
+    \Phi_{\gamma} \neq I_n.
     \]
 \end{enumerate}
 
-\section{Operator Algebra}
+\section{Fun-Sphere Definition}
 
-Each narrative operator is represented as a pair
+The Fun-Sphere is defined as the holonomy-invariant region:
 \[
-O = (T, T^{-1}),
-\]
-where $T \in GL(50)$ is the forward transform and $T^{-1}$ is the 
-inverse transform.
-
-Application of an operator is
-\[
-O(x) = T x.
-\]
-
-A narrative loop is the composition
-\[
-\Phi = O_n \circ \cdots \circ O_1.
-\]
-
-\section{Fun-Sphere Construction}
-
-Define the Fun-Sphere $\mathcal{F}$ as the set of points reachable 
-through holonomy-induced transformations:
-\[
-\mathcal{F} = 
+\mathcal{F} =
 \left\{
-x \in M \mid 
-\exists \gamma \text{ such that } 
-P_\gamma(x) = x \text{ and } \Phi_\gamma \neq I_{50}
+x \in M \mid
+P_{\gamma}(x) = x \ \text{and} \ \Phi_{\gamma} \neq I_n
 \right\}.
 \]
 
-We show that $\mathcal{F}$ is a submanifold:
+\section{Expansion Procedure}
 
-\begin{theorem}
-If the holonomy group $\mathrm{Hol}_x(\nabla)$ acts transitively on a 
-subspace $S \subseteq T_x M$, then the exponential map
+Starting from $x_0 \in M$, the Fun-Sphere expands via:
 \[
-\exp_x : S \to M
+x_{k+1} = P_{\gamma}(x_k),
 \]
-generates a submanifold $\mathcal{F}$ invariant under holonomy.
-\end{theorem}
+subject to the trigger condition. The region is finite in practice due
+to numerical stability and bounded operator effects.
 
-\begin{proof}
-Standard holonomy invariance arguments apply: the orbit of $x$ under 
-the holonomy group forms an immersed submanifold.  
-\end{proof}
+\section{Narrative Ecology}
 
-Thus the Fun-Sphere is a holonomy-closed region of $M$.
-
-\section{Reversible Narrative Ecology}
-
-Let $x(t)$ be a narrative state evolving under operator $O(t)$:
+Narrative evolution is modeled as reversible operator flow:
 \[
-\frac{dx}{dt} = V(x(t), O(t)).
+x_{t+1} = T x_t,
+\]
+with backward evolution:
+\[
+x_{t-1} = T^{-1} x_t.
 \]
 
-Reversibility requires
+A reversible narrative loop is:
 \[
-\Phi_{O^{-1}} = \Phi_O^{-1}.
+x_{\text{forward}} = T_{\gamma} x_0,
+\]
+\[
+x_{\text{backward}} = T_{\gamma}^{-1} x_{\text{forward}}.
 \]
 
-Thus the reversible flow is
-\[
-x(t) = \exp\left( \int_0^t V(x(s), O(s)) \, ds \right).
-\]
+When $T_{\gamma}$ induces non-trivial holonomy, narrative curvature
+emerges.
 
-The reverse flow is
-\[
-x(-t) = \exp\left( -\int_0^t V(x(s), O(s)) \, ds \right).
-\]
+\section{Interpretation}
 
-This defines reversible narrative dynamics on $M$ and on the 
-Fun-Sphere submanifold $\mathcal{F}$.
-
-\section{Conclusion}
-
-The Fun-Sphere is a mathematically well-defined holonomy-induced 
-submanifold embedded in a neutral 50-dimensional manifold.  
-It supports reversible narrative ecology and provides a sovereign 
-region for operator-driven dynamics.
+This toy model demonstrates:
+\begin{itemize}
+    \item narrative as manifold traversal,
+    \item story actions as operators,
+    \item plot twists as holonomy,
+    \item reversible story physics via operator inverses,
+    \item pocket universes as holonomy-invariant submanifolds.
+\end{itemize}
 
 \end{document}
