@@ -1,0 +1,28 @@
+[project]
+name = "fun-sphere"
+version = "0.1.0"
+description = "Holonomy-induced submanifold engine for reversible narrative ecologies."
+authors = [
+    { name = "Borealis S. Hedling" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+dependencies = [
+    "numpy>=1.24"
+]
+
+[project.urls]
+homepage = "https://github.com/Borealiscodes/fun-sphere"
+repository = "https://github.com/Borealiscodes/fun-sphere"
+
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+fun_sphere = ["*.txt", "*.md", "*.tex"]
